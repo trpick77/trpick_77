@@ -1,625 +1,298 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>هبت اليوم</title>
-  <meta name="description" content="صفحة هبوط احترافية للتسويق بالعمولة تعرض 6 منتجات الأكثر مبيعاً بأسلوب تشويقي وتفاعلي للسوق السعودي." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!--
-    ملاحظة: لإظهار خطوط عربية حديثة مثل "Tajawal" أو "Cairo" أضف رابط Google Fonts في حال رغبت:
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    لم أضمن روابط خارجية هنا حسب طلبك؛ يمكنك إضافة الرابط أعلاه داخل <head> إذا رغبت.
-  -->
+<title>هبت اليوم</title>
+<meta name="description" content="أقوى المنتجات الرائجة اليوم مع روابط شراء مباشرة">
 
-  <style>
-    :root{
-      --bg:#020617;               /* dark background */
-      --card:#0f1720;             /* card background */
-      --muted:#9aa6b2;            /* muted text */
-      --accent-r: 0;              /* RGB accent */
-      --accent-g: 200;
-      --accent-b: 255;
-      --accent: rgba(var(--accent-r),var(--accent-g),var(--accent-b),1);
-      --glass: rgba(255,255,255,0.03);
-      --glass-2: rgba(255,255,255,0.02);
-      --cta-bg: linear-gradient(90deg, rgba(0,200,255,0.12), rgba(120,0,255,0.08));
-      --radius: 14px;
-      --transition: 250ms cubic-bezier(.2,.9,.3,1);
-      font-family: "Tajawal", "Cairo", "Segoe UI", "Noto Sans Arabic", system-ui, -apple-system, sans-serif;
-      color-scheme: dark;
-    }
+<link rel="icon" href="Logo7.svg">
+<meta name="theme-color" content="#020617">
 
-    /* Mobile-first base */
-    html,body{
-      height:100%;
-      margin:0;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(0,200,255,0.06), transparent 6%),
-                  radial-gradient(900px 400px at 90% 90%, rgba(120,0,255,0.04), transparent 6%),
-                  var(--bg);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      color:#e6eef6;
-      line-height:1.45;
-    }
+<style>
 
-    .container{
-      max-width:1070px;
-      margin:0 auto;
-      padding:77px;
-    }
-
-    /* Header */
-    header{
-      display:flex;
-      gap:12px;
-      align-items:center;
-      justify-content:space-between;
-      margin-bottom:18px;
-    }
-
-    .brand{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-
-    .logo{
-      width:56px;
-      height:56px;
-      border-radius:12px;
-      background: linear-gradient(135deg, rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.18), rgba(120,0,255,0.08));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      color:var(--accent);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.6), 0 0 18px rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.06);
-      flex-shrink:0;
-    }
-
-    .brand h1{
-      font-size:18px;
-      margin:0;
-      letter-spacing:0.2px;
-    }
-
-    .brand p{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    .controls{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-
-   .mode-toggle{
-  background: rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.08);
-  border: 1px solid rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.25);
-  color: var(--accent);
-  padding: 8px 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all var(--transition);
-  font-size: 13px;
+:root{
+--bg:#020617;
+--card:#0f1720;
+--accent:#00c8ff;
+--text:#e6eef6;
+--muted:#9aa6b2;
+--radius:14px;
 }
 
-.mode-toggle:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.15);
-  border-color: var(--accent);
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
-    /* Intro */
-    .intro{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      border-radius:12px;
-      padding:14px;
-      margin-bottom:18px;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      justify-content:space-between;
-      border:1px solid var(--glass-2);
-    }
-
-    .intro .left{
-      display:flex;
-      gap:12px;
-      align-items:center;
-    }
-
-    .badge{
-      background:linear-gradient(90deg, rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.12), rgba(120,0,255,0.06));
-      color:var(--accent);
-      padding:8px 10px;
-      border-radius:10px;
-      font-weight:700;
-      font-size:13px;
-      box-shadow:0 6px 18px rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.04);
-    }
-
-    .intro h2{
-      margin:0;
-      font-size:16px;
-    }
-
-    .intro p{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    /* Grid */
-    .grid{
-      display:grid;
-      gap:14px;
-      grid-template-columns: 1fr;
-    }
-
-    /* Product Card */
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-      border-radius:var(--radius);
-      overflow:hidden;
-      border:1px solid var(--glass);
-      display:flex;
-      flex-direction:column;
-      transition:transform var(--transition), box-shadow var(--transition);
-    }
-
-    .card:hover{
-      transform:translateY(-8px);
-      box-shadow: 0 20px 50px rgba(2,6,23,0.6), 0 0 40px rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.06);
-    }
-
-    .card .media{
-      position:relative;
-      aspect-ratio: 16/10;
-      background:linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.25));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      overflow:hidden;
-    }
-
-    .card .media img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      transition:transform var(--transition), filter var(--transition);
-      transform-origin:center;
-      filter:brightness(0.95) saturate(1.05);
-    }
-
-    .card .media::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.28));
-      pointer-events:none;
-    }
-
-    .card .media:hover img{
-      transform:scale(1.06);
-      filter:brightness(1.02) saturate(1.08);
-    }
-
-    .card .content{
-      padding:12px;
-      display:flex;
-      gap:10px;
-      flex-direction:column;
-      flex:1 1 auto;
-    }
-
-    .meta{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:8px;
-    }
-
-    .title{
-      font-size:15px;
-      margin:0;
-      font-weight:700;
-    }
-
-    .desc{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-    }
-
-    .price-row{
-      display:flex;
-      gap:8px;
-      align-items:center;
-      margin-top:8px;
-    }
-
-    .price{
-      font-weight:800;
-      color:var(--accent);
-      font-size:16px;
-      background:linear-gradient(90deg, rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.12), transparent);
-      padding:6px 10px;
-      border-radius:10px;
-    }
-
-    .old-price{
-      color:rgba(255,255,255,0.25);
-      text-decoration:line-through;
-      font-size:13px;
-    }
-
-    .cta{
-      margin-top:12px;
-      display:flex;
-      gap:8px;
-      align-items:center;
-    }
-
-    .btn{
-      flex:1 1 auto;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:12px;
-      cursor:pointer;
-      border:1px solid rgba(255,255,255,0.04);
-      background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
-      color:#eaf6ff;
-      font-weight:700;
-      transition:all var(--transition);
-      text-decoration:none;
-      font-size:14px;
-    }
-
-    .btn:hover{
-      transform:translateY(-3px);
-      box-shadow:0 12px 30px rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.08);
-      border-color:rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.18);
-      color:var(--accent);
-    }
-
-    .btn.primary{
-      background: linear-gradient(90deg, rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.14), rgba(120,0,255,0.08));
-      border:1px solid rgba(var(--accent-r),var(--accent-g),var(--accent-b),0.18);
-      color:var(--accent);
-    }
-
-    .small{
-      font-size:12px;
-      padding:8px 10px;
-      border-radius:10px;
-      background:transparent;
-      color:var(--muted);
-      border:1px dashed rgba(255,255,255,0.03);
-    }
-
-    /* Footer */
-    footer{
-      margin-top:22px;
-      color:var(--muted);
-      font-size:13px;
-      text-align:center;
-      padding:18px 6px;
-    }
-
-    /* Responsive breakpoints */
-    @media (min-width:640px){
-      .grid{ grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (min-width:1024px){
-      .grid{ grid-template-columns: repeat(3, 1fr); }
-      .intro{ padding:18px; }
-    }
-
-    /* Light mode support (optional) */
-   .light{
-  --bg:#0b0f14;
-  --card:#0f1720;
-  --muted:#9aa6b2;
-  color:#e6eef6;
-  background: radial-gradient(circle at top, rgba(0,200,255,0.05), transparent),
-              radial-gradient(circle at bottom, rgba(120,0,255,0.04), transparent),
-              #0b0f14;
+body{
+font-family: system-ui,-apple-system,Segoe UI,Tajawal,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.5;
 }
 
-    .light .card{
-     --bg:#0b0f14;
-  --card:#0f1720;
-  --muted:#9aa6b2;
-  color:#e6eef6;
-  background: radial-gradient(circle at top, rgba(0,200,255,0.05), transparent),
-              radial-gradient(circle at bottom, rgba(120,0,255,0.04), transparent),
-              #0b0f14;
-    }
-
-    .light .logo{ color: #0b1220; }
-    .light .badge{ color: #006b8f; }
-    .light .btn{ color:#0b1220; }
-    .light .btn.primary{ color:#004a6b; }
-
-
-
-
-
-/* CSS */
-.site-header {
-  display: flex;
-  justify-content: space-between; /* الشعار على اليسار والقائمة على اليمين */
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #111; /* لون الشريط العلوي */
+.container{
+max-width:1100px;
+margin:auto;
+padding:16px;
 }
 
-.logo {
-  height: 50px; /* حجم اللوقو */
-  width: auto;
+@media (min-width:768px){
+.container{padding:30px;}
 }
 
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+gap:10px;
 }
 
-.main-nav li {
-  margin-left: 20px;
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
 }
 
-.main-nav a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  transition: color 0.3s;
+.brand img{
+width:60px;
+height:auto;
 }
 
-.main-nav a:hover {
-  color: #ff9800; /* تأثير عند المرور */
+.brand h1{
+font-size:18px;
 }
 
+.mode-toggle{
+background:#111827;
+border:none;
+color:#fff;
+padding:8px 12px;
+border-radius:10px;
+cursor:pointer;
+}
 
+.intro{
+background:#0b1220;
+border-radius:12px;
+padding:14px;
+margin-bottom:20px;
+}
 
+.grid{
+display:grid;
+gap:16px;
+}
 
-  </style>
+@media (min-width:640px){
+.grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media (min-width:1024px){
+.grid{grid-template-columns:repeat(3,1fr);}
+}
+
+.card{
+background:var(--card);
+border-radius:var(--radius);
+overflow:hidden;
+display:flex;
+flex-direction:column;
+transition:transform .2s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.media{
+position:relative;
+width:100%;
+padding-top:62%;
+}
+
+.media img{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.content{
+padding:14px;
+display:flex;
+flex-direction:column;
+gap:10px;
+flex-grow:1;
+}
+
+.title{
+font-size:15px;
+font-weight:700;
+}
+
+.desc{
+font-size:13px;
+color:var(--muted);
+}
+
+.btn{
+display:block;
+text-align:center;
+padding:10px;
+border-radius:10px;
+background:var(--accent);
+color:#000;
+text-decoration:none;
+font-weight:700;
+margin-top:auto;
+}
+
+.btn:hover{
+opacity:.9;
+}
+
+footer{
+text-align:center;
+margin-top:30px;
+color:var(--muted);
+font-size:13px;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+</style>
 </head>
 
-
-<!-- كود لوقو الصفحه العلوي -->
-  <!-- Favicon العادي -->
-  <link rel="icon" type="image/png" sizes="32x32" href="Logo7.svg">
-  <link rel="icon" type="image/png" sizes="16x16" href="Logo7.svg">
-
-  <!-- Favicon لأجهزة Apple -->
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-  <!-- Favicon للـ Safari pinned tab (SVG) -->
-  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#ff9800">
-
-  <!-- Favicon للمتصفحات القديمة -->
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- Optional: theme color لشريط التصفح على الجوال -->
-  <meta name="theme-color" content="#ff9800">
-  
-
 <body>
-  <div class="container" id="page">
-    <header>
-      <div class="brand" aria-hidden="false">
-        <div class="logo" aria-hidden="true"><img src="Logo.png" width="90حء" height="60px"  alt=""></div>
-        <div>
-          <h2>وش اللي هابين فيه الناس؟ 🤔</h2>
-          <p>أقوى العروض المختارة   — منتجات مضمونة ومراجعات سريعة</p>
-        </div>
-      </div>
 
-      <div class="controls">
-        <button class="mode-toggle" id="toggleMode" aria-pressed="false" title="تبديل الوضع">تبديل الوضع</button>
-      </div>
-    </header>
+<div class="container">
 
-    <section class="intro" role="region" aria-label="مقدمة">
-      <div class="left">
-        <div class="badge">الأكثر مبيعاً</div>
-        <div>
-          <h2>6 منتجات لازم تشوفها اليوم</h2>
-          <p>عروض محدودة وأسعار منافسة — اضغط على أي منتج لاكتشاف السعر على أمازون.</p>
-        </div>
-      </div>
-      <div class="right" style="text-align:left;">
-        <p style="margin:0;color:var(--muted);font-size:13px;">تصفح سريع • تصميم متجاوب • روابط تابعة</p>
-      </div>
-    </section>
+<header>
 
-    <!-- Product Grid -->
-    <main class="grid" aria-live="polite">
-      <!-- Product 1 -->
-      <article class="card" data-affiliate="https://amzn.to/4ukMhWP" aria-label="منتج 1">
-        <div class="media">
-          <!-- استبدل src بالمسار الفعلي للصورة -->
-          <img src="img6.png" alt="صورة المنتج 1 — سماعات لاسلكية" loading="lazy">
-        </div>
-        <div class="content">
-          <div class="meta">
-            <h3 class="title">هل يستحق هذا الشريط الضوئي كل الاهتمام؟</h3>
-            
-          </div>
-          <p class="desc">شريط إضاءة للكمبيوتر يريح العينين ويضيف جو مذهل للشاشة — تصميم أنيق، إضاءة ناعمة ومتناسقة، ومحبوب من المستخدمين.</p>
-          <div class="price-row">
-            
-          </div>
-          <div class="cta">
-            <a class="btn primary" href="#" data-link="https://amzn.to/4ukMhWP" role="button" aria-label="اكتشف السعر في أمازون — سماعات">
-              اكتشف السعر في أمازون 🚀
-            </a>
-           
-          </div>
-        </div>
-      </article>
+<div class="brand">
+<img src="Logo.png" alt="logo">
+<h1>وش اللي هابين فيه الناس؟</h1>
+</div>
 
-      <!-- Product 2 -->
-      <article class="card" data-affiliate="https://amzn.to/4rm0hNp" aria-label="منتج 2">
-        <div class="media">
-          <img src="img3.png" alt="صورة المنتج 2 — خلاط مطبخ" loading="lazy">
-        </div>
-        <div class="content">
-          <div class="meta">
-            <h3 class="title">هل سطح الماوس والكيبورد هذا يستحق مكانه على مكتبك؟</h3>
-           
-          </div>
-          <p class="desc">قاعدة ماوس وكيبورد بمساحة واسعة وتصميم طبوغرافي أنيق — تمنحك ثباتًا ممتازًا وتحكمًا سلسًا أثناء اللعب والعمل، ومفضلة من المستخدمين الباحثين عن راحة وأداء متفوق.</p>
-          <div class="price-row">
-           
-          </div>
-          <div class="cta">
-            <a class="btn primary" href="#" data-link="https://amzn.to/4rm0hNp" role="button" aria-label="اكتشف السعر في أمازون — خلاط">
-              اكتشف السعر في أمازون 🚀
-            </a>
-            
-          </div>
-        </div>
-      </article>
+<button class="mode-toggle" id="toggleMode">
+الوضع الفاتح
+</button>
 
-      <!-- Product 3 -->
-      <article class="card" data-affiliate="https://amzn.to/46NZgpY" aria-label="منتج 3">
-        <div class="media">
-          <img src="img5.png" alt="صورة المنتج 3 — ساعة ذكية" loading="lazy">
-        </div>
-        <div class="content">
-          <div class="meta">
-            <h3 class="title">هل ستحصل على تجربة لعب أسرع وأكثر سلاسة مع هذه الكيبورد؟</h3>
-           
-          </div>
-          <p class="desc">كيبورد ميكانيكية لاسلكية للاعبين تقدم أداء سريع واستجابة ممتازة في الألعاب والعمل، مع تصميم قوي ومفاتيح مريحة تسمح لك بالتحكم بدقة وراحة. تجربة كتابة ولعب متنقلة بدون أسلاك ومريحة لفترات طويلة.</p>
-          <div class="price-row">
-            
-          </div>
-          <div class="cta">
-            <a class="btn primary" href="#" data-link="https://amzn.to/46NZgpY" role="button" aria-label="اكتشف السعر في أمازون — ساعة ذكية">
-              اكتشف السعر في أمازون 🚀
-            </a>
-          
-          </div>
-        </div>
-      </article>
+</header>
 
-      <!-- Product 4 -->
-      <article class="card" data-affiliate="https://amzn.to/3OZEEVF" aria-label="منتج 4">
-        <div class="media">
-          <img src="img8.jpg" alt="صورة المنتج 4 — مكنسة روبوت" loading="lazy">
-        </div>
-        <div class="content">
-          <div class="meta">
-            <h3 class="title">هل هذه الحقيبة الأنيقة ستكون الإضافة المثالية كل امرأة؟</h3>
-          
-          </div>
-          <p class="desc">حقيبة نسائية بتصميم راقٍ ومقبض علوي عملي — تجمع بين الأناقة والوظيفة مع مساحة مناسبة للأغراض اليومية، مثالية للخروج والمناسبات العصرية. الجودة والتفاصيل الدقيقة تمنحها طابعًا أنيقًا</p>
-          <div class="price-row">
-           
-          </div>
-          <div class="cta">
-            <a class="btn primary" href="#" data-link="https://amzn.to/3OZEEVF" role="button" aria-label="اكتشف السعر في أمازون — مكنسة روبوت">
-              اكتشف السعر في أمازون 🚀
-            </a>
-           
-          </div>
-        </div>
-      </article>
+<section class="intro">
+<h2>6 منتجات لازم تشوفها اليوم</h2>
+<p>عروض محدودة وأسعار منافسة — اضغط على أي منتج لاكتشاف السعر.</p>
+</section>
 
-      <!-- Product 5 -->
-      <article class="card" data-affiliate="https://amzn.to/47ysA3Y" aria-label="منتج 5">
-        <div class="media">
-          <img src="img9.jpg" alt="صورة المنتج 5 — كاميرا مراقبة" loading="lazy">
-        </div>
-        <div class="content">
-          <div class="meta">
-            <h3 class="title">ليش هذه القلادة تقييمها عالي؟ ممكن عشان سعرها المميز وجودتها !</h3>
-            
-          </div>
-          <p class="desc">قلادة مويسانيت فاخرة للنساء — ماس مزروع في المختبر، مطلية بالذهب الوردي عيار 18 قيراط، مقاومة للماء، تضيف لمسة أناقة فاخرة لأي إطلالة.</p>
-          <div class="price-row">
-            
-          </div>
-          <div class="cta">
-            <a class="btn primary" href="#" data-link="https://amzn.to/47ysA3Y" role="button" aria-label="اكتشف السعر في أمازون — كاميرا مراقبة">
-              اكتشف السعر في أمازون 🚀
-            </a>
-          </div>
-        </div>
-      </article>
+<main class="grid">
 
-      <!-- Product 6 -->
-      <article class="card" data-affiliate="https://amzn.to/4s08Hez" aria-label="منتج 6">
-        <div class="media">
-          <img src="img10.jpg" alt="صورة المنتج 6 — جهاز تدليك" loading="lazy">
-        </div>
-        <div class="content">
-          <div class="meta">
-            <h3 class="title">ليش هذا السوار البسيط يخطف الأنظار؟</h3>
-          </div>
-          <p class="desc">سوار أنيق من لؤلؤ المياه العذبة المزروع بعناية، مطلي بالروديوم لمظهر لامع وفاخر، وقابل للتعديل ليتناسب مع قياس معصمك. قطعة مثالية تضيف لمسة أنثوية راقية لأي إطلالة — من الكاجوال إلى الرسمي.</p>
-          <div class="price-row">
-            
-          </div>
-          <div class="cta">
-            <a class="btn primary" href="#" data-link="https://amzn.to/4s08Hez" role="button" aria-label="اكتشف السعر في أمازون — جهاز تدليك">
-              اكتشف السعر في أمازون 🚀
-            </a>
-       
-          </div>
-        </div>
-      </article>
-    </main>
+<article class="card">
+<div class="media">
+<img src="img6.png" alt="">
+</div>
+<div class="content">
+<h3 class="title">هل يستحق هذا الشريط الضوئي كل الاهتمام؟</h3>
+<p class="desc">شريط إضاءة للكمبيوتر يريح العينين ويضيف جو رائع للمكتب.</p>
+<a class="btn" href="https://amzn.to/4ukMhWP" target="_blank">اكتشف السعر</a>
+</div>
+</article>
 
-    <footer>
-      <p>روابط تابعة  • صفحة مخصصة للسوق </p>
-    </footer>
-  </div>
+<article class="card">
+<div class="media">
+<img src="img3.png" alt="">
+</div>
+<div class="content">
+<h3 class="title">هل سطح الماوس هذا يستحق مكانه؟</h3>
+<p class="desc">قاعدة ماوس واسعة تعطي تحكم ممتاز أثناء اللعب والعمل.</p>
+<a class="btn" href="https://amzn.to/4rm0hNp" target="_blank">اكتشف السعر</a>
+</div>
+</article>
 
-  <script>
-    // بسيط: تبديل الوضع بين داكن وفاتح
-    (function(){
-      const page = document.getElementById('page');
-      const toggle = document.getElementById('toggleMode');
-      let light = false;
+<article class="card">
+<div class="media">
+<img src="img5.png" alt="">
+</div>
+<div class="content">
+<h3 class="title">كيبورد ميكانيكية للاعبين</h3>
+<p class="desc">استجابة سريعة وتصميم قوي للألعاب والعمل.</p>
+<a class="btn" href="https://amzn.to/46NZgpY" target="_blank">اكتشف السعر</a>
+</div>
+</article>
 
-      toggle.addEventListener('click', () => {
-        light = !light;
-        document.documentElement.classList.toggle('light', light);
-        toggle.setAttribute('aria-pressed', String(light));
-        toggle.textContent = light ? 'الوضع الداكن' : 'الوضع الفاتح';
-      });
+<article class="card">
+<div class="media">
+<img src="img8.jpg" alt="">
+</div>
+<div class="content">
+<h3 class="title">حقيبة نسائية أنيقة</h3>
+<p class="desc">تصميم راقٍ ومساحة مناسبة للاستخدام اليومي.</p>
+<a class="btn" href="https://amzn.to/3OZEEVF" target="_blank">اكتشف السعر</a>
+</div>
+</article>
 
-      // تتبع نقرات الأزرار (يمكن ربطها بنظام تتبع أو تحويل الروابط الفعلية)
-      document.addEventListener('click', (e) => {
-        const btn = e.target.closest('.btn');
-        if(!btn) return;
-        const link = btn.getAttribute('data-link') || btn.href || btn.getAttribute('data-affiliate');
-        if(link){
-          // هنا يمكنك استبدال السلوك لفتح الرابط في نافذة جديدة مع تتبع العمولة
-          e.preventDefault();
-          // فتح الرابط في نافذة جديدة
-          window.open(link, '_blank', 'noopener');
-          // تتبع بسيط في الكونسول (استبدل هذا باستدعاء تتبع حقيقي)
-          console.log('Affiliate click:', link);
-        }
-      });
+<article class="card">
+<div class="media">
+<img src="img9.jpg" alt="">
+</div>
+<div class="content">
+<h3 class="title">قلادة مويسانيت فاخرة</h3>
+<p class="desc">ماس مزروع في المختبر ومطلي بالذهب الوردي.</p>
+<a class="btn" href="https://amzn.to/47ysA3Y" target="_blank">اكتشف السعر</a>
+</div>
+</article>
 
-      // تحسين: استبدل صور placeholder بمسارات فعلية أو استخدم lazy loading متقدم
-    })();
-  </script>
+<article class="card">
+<div class="media">
+<img src="img10.jpg" alt="">
+</div>
+<div class="content">
+<h3 class="title">سوار لؤلؤ أنيق</h3>
+<p class="desc">لؤلؤ طبيعي مع تصميم قابل للتعديل.</p>
+<a class="btn" href="https://amzn.to/4s08Hez" target="_blank">اكتشف السعر</a>
+</div>
+</article>
+
+</main>
+
+<footer>
+روابط تابعة • صفحة تسويق بالعمولة
+</footer>
+
+</div>
+
+<script>
+
+const btn = document.getElementById("toggleMode")
+
+btn.onclick = () => {
+
+document.body.classList.toggle("light")
+
+if(document.body.classList.contains("light")){
+document.body.style.background="#ffffff"
+document.body.style.color="#000"
+btn.textContent="الوضع الداكن"
+}else{
+document.body.style.background="#020617"
+document.body.style.color="#e6eef6"
+btn.textContent="الوضع الفاتح"
+}
+
+}
+
+</script>
+
 </body>
 </html>
