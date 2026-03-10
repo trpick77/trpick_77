@@ -6,6 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>هبت اليوم</title>
+<meta name="description" content="أقوى المنتجات الرائجة اليوم مع روابط شراء مباشرة">
+
+<link rel="icon" href="Logo7.svg">
+<meta name="theme-color" content="#020617">
 
 <style>
 
@@ -15,6 +19,7 @@
 --accent:#00c8ff;
 --text:#e6eef6;
 --muted:#9aa6b2;
+--radius:14px;
 }
 
 *{
@@ -24,7 +29,7 @@ padding:0;
 }
 
 body{
-font-family:system-ui,-apple-system,Segoe UI,Tajawal,sans-serif;
+font-family: system-ui,-apple-system,Segoe UI,Tajawal,sans-serif;
 background:var(--bg);
 color:var(--text);
 line-height:1.5;
@@ -33,7 +38,11 @@ line-height:1.5;
 .container{
 max-width:1100px;
 margin:auto;
-padding:20px;
+padding:16px;
+}
+
+@media (min-width:768px){
+.container{padding:30px;}
 }
 
 header{
@@ -41,6 +50,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:20px;
+gap:10px;
 }
 
 .brand{
@@ -50,33 +60,50 @@ gap:10px;
 }
 
 .brand img{
-width:55px;
+width:60px;
+height:auto;
+}
+
+.brand h1{
+font-size:18px;
+}
+
+.mode-toggle{
+background:#111827;
+border:none;
+color:#fff;
+padding:8px 12px;
+border-radius:10px;
+cursor:pointer;
 }
 
 .intro{
 background:#0b1220;
-padding:15px;
-border-radius:10px;
+border-radius:12px;
+padding:14px;
 margin-bottom:20px;
 }
 
-/* GRID 3x2 */
-
 .grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
+gap:16px;
 }
 
-/* الكرت */
+@media (min-width:640px){
+.grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media (min-width:1024px){
+.grid{grid-template-columns:repeat(3,1fr);}
+}
 
 .card{
 background:var(--card);
-border-radius:12px;
+border-radius:var(--radius);
 overflow:hidden;
 display:flex;
 flex-direction:column;
-transition:0.2s;
+transition:transform .2s;
 }
 
 .card:hover{
@@ -86,7 +113,7 @@ transform:translateY(-5px);
 .media{
 position:relative;
 width:100%;
-padding-top:65%;
+padding-top:62%;
 }
 
 .media img{
@@ -99,39 +126,44 @@ object-fit:cover;
 }
 
 .content{
-padding:12px;
+padding:14px;
 display:flex;
 flex-direction:column;
-gap:8px;
+gap:10px;
 flex-grow:1;
 }
 
 .title{
-font-size:14px;
-font-weight:bold;
+font-size:15px;
+font-weight:700;
 }
 
 .desc{
-font-size:12px;
+font-size:13px;
 color:var(--muted);
 }
 
 .btn{
-margin-top:auto;
+display:block;
 text-align:center;
+padding:10px;
+border-radius:10px;
 background:var(--accent);
 color:#000;
-padding:9px;
-border-radius:8px;
 text-decoration:none;
-font-weight:bold;
+font-weight:700;
+margin-top:auto;
+}
+
+.btn:hover{
+opacity:.9;
 }
 
 footer{
-margin-top:30px;
 text-align:center;
-font-size:13px;
+margin-top:30px;
 color:var(--muted);
+font-size:13px;
 }
 
 img{
@@ -149,114 +181,88 @@ display:block;
 <header>
 
 <div class="brand">
-<img src="Logo.png">
-<h2>وش اللي هابين فيه الناس؟</h2>
+<img src="Logo.png" alt="logo">
+<h1>وش اللي هابين فيه الناس؟</h1>
 </div>
+
+<button class="mode-toggle" id="toggleMode">
+الوضع الفاتح
+</button>
 
 </header>
 
 <section class="intro">
-<h3>6 منتجات لازم تشوفها اليوم</h3>
-<p>عروض محدودة وأسعار منافسة</p>
+<h2>6 منتجات لازم تشوفها اليوم</h2>
+<p>عروض محدودة وأسعار منافسة — اضغط على أي منتج لاكتشاف السعر.</p>
 </section>
 
 <main class="grid">
 
-<!-- المنتج 1 -->
-
-<div class="card">
+<article class="card">
 <div class="media">
-<img src="img6.png">
+<img src="img6.png" alt="">
 </div>
-
 <div class="content">
-<div class="title">شريط إضاءة للشاشة</div>
-<div class="desc">إضاءة مريحة للعين تعطي مكتبك شكل احترافي.</div>
-<a class="btn" href="https://amzn.to/4ukMhWP" target="_blank">
-اكتشف السعر
-</a>
+<h3 class="title">هل يستحق هذا الشريط الضوئي كل الاهتمام؟</h3>
+<p class="desc">شريط إضاءة للكمبيوتر يريح العينين ويضيف جو رائع للمكتب.</p>
+<a class="btn" href="https://amzn.to/4ukMhWP" target="_blank">اكتشف السعر</a>
 </div>
-</div>
+</article>
 
-<!-- المنتج 2 -->
-
-<div class="card">
+<article class="card">
 <div class="media">
-<img src="img3.png">
+<img src="img3.png" alt="">
 </div>
-
 <div class="content">
-<div class="title">سطح ماوس وكيبورد احترافي</div>
-<div class="desc">قاعدة كبيرة وثابتة تعطيك تحكم ممتاز.</div>
-<a class="btn" href="https://amzn.to/4rm0hNp" target="_blank">
-اكتشف السعر
-</a>
+<h3 class="title">هل سطح الماوس هذا يستحق مكانه؟</h3>
+<p class="desc">قاعدة ماوس واسعة تعطي تحكم ممتاز أثناء اللعب والعمل.</p>
+<a class="btn" href="https://amzn.to/4rm0hNp" target="_blank">اكتشف السعر</a>
 </div>
-</div>
+</article>
 
-<!-- المنتج 3 -->
-
-<div class="card">
+<article class="card">
 <div class="media">
-<img src="img5.png">
+<img src="img5.png" alt="">
 </div>
-
 <div class="content">
-<div class="title">كيبورد ميكانيكية للألعاب</div>
-<div class="desc">استجابة سريعة وتجربة لعب احترافية.</div>
-<a class="btn" href="https://amzn.to/46NZgpY" target="_blank">
-اكتشف السعر
-</a>
+<h3 class="title">كيبورد ميكانيكية للاعبين</h3>
+<p class="desc">استجابة سريعة وتصميم قوي للألعاب والعمل.</p>
+<a class="btn" href="https://amzn.to/46NZgpY" target="_blank">اكتشف السعر</a>
 </div>
-</div>
+</article>
 
-<!-- المنتج 4 -->
-
-<div class="card">
+<article class="card">
 <div class="media">
-<img src="img8.jpg">
+<img src="img8.jpg" alt="">
 </div>
-
 <div class="content">
-<div class="title">حقيبة نسائية أنيقة</div>
-<div class="desc">تصميم راقٍ مناسب للاستخدام اليومي.</div>
-<a class="btn" href="https://amzn.to/3OZEEVF" target="_blank">
-اكتشف السعر
-</a>
+<h3 class="title">حقيبة نسائية أنيقة</h3>
+<p class="desc">تصميم راقٍ ومساحة مناسبة للاستخدام اليومي.</p>
+<a class="btn" href="https://amzn.to/3OZEEVF" target="_blank">اكتشف السعر</a>
 </div>
-</div>
+</article>
 
-<!-- المنتج 5 -->
-
-<div class="card">
+<article class="card">
 <div class="media">
-<img src="img9.jpg">
+<img src="img9.jpg" alt="">
 </div>
-
 <div class="content">
-<div class="title">قلادة مويسانيت فاخرة</div>
-<div class="desc">ماس مزروع بتصميم فاخر.</div>
-<a class="btn" href="https://amzn.to/47ysA3Y" target="_blank">
-اكتشف السعر
-</a>
+<h3 class="title">قلادة مويسانيت فاخرة</h3>
+<p class="desc">ماس مزروع في المختبر ومطلي بالذهب الوردي.</p>
+<a class="btn" href="https://amzn.to/47ysA3Y" target="_blank">اكتشف السعر</a>
 </div>
-</div>
+</article>
 
-<!-- المنتج 6 -->
-
-<div class="card">
+<article class="card">
 <div class="media">
-<img src="img10.jpg">
+<img src="img10.jpg" alt="">
 </div>
-
 <div class="content">
-<div class="title">سوار لؤلؤ أنيق</div>
-<div class="desc">سوار فاخر قابل للتعديل.</div>
-<a class="btn" href="https://amzn.to/4s08Hez" target="_blank">
-اكتشف السعر
-</a>
+<h3 class="title">سوار لؤلؤ أنيق</h3>
+<p class="desc">لؤلؤ طبيعي مع تصميم قابل للتعديل.</p>
+<a class="btn" href="https://amzn.to/4s08Hez" target="_blank">اكتشف السعر</a>
 </div>
-</div>
+</article>
 
 </main>
 
@@ -265,6 +271,28 @@ display:block;
 </footer>
 
 </div>
+
+<script>
+
+const btn = document.getElementById("toggleMode")
+
+btn.onclick = () => {
+
+document.body.classList.toggle("light")
+
+if(document.body.classList.contains("light")){
+document.body.style.background="#ffffff"
+document.body.style.color="#000"
+btn.textContent="الوضع الداكن"
+}else{
+document.body.style.background="#020617"
+document.body.style.color="#e6eef6"
+btn.textContent="الوضع الفاتح"
+}
+
+}
+
+</script>
 
 </body>
 </html>
