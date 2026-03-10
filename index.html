@@ -2,13 +2,19 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
 <meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>هبت اليوم</title>
-<meta name="description" content="أقوى المنتجات الرائجة اليوم مع روابط شراء مباشرة">
+<title>هبت اليوم | أقوى المنتجات الرائجة</title>
 
-<link rel="icon" href="Logo7.svg">
+<meta name="description" content="وش اللي هابين فيه الناس؟ أقوى المنتجات الرائجة اليوم مع روابط شراء مباشرة">
+
+<meta name="application-name" content="هبت اليوم">
+<meta name="apple-mobile-web-app-title" content="هبت اليوم">
+
+<link rel="icon" type="image/png" href="Logo7.svg">
 <meta name="theme-color" content="#020617">
 
 <style>
@@ -29,7 +35,7 @@ padding:0;
 }
 
 body{
-font-family: system-ui,-apple-system,Segoe UI,Tajawal,sans-serif;
+font-family:system-ui,-apple-system,Segoe UI,Tajawal,sans-serif;
 background:var(--bg);
 color:var(--text);
 line-height:1.5;
@@ -39,10 +45,6 @@ line-height:1.5;
 max-width:1100px;
 margin:auto;
 padding:16px;
-}
-
-@media (min-width:768px){
-.container{padding:30px;}
 }
 
 header{
@@ -77,6 +79,8 @@ border-radius:10px;
 cursor:pointer;
 }
 
+/* intro */
+
 .intro{
 background:#0b1220;
 border-radius:12px;
@@ -84,18 +88,27 @@ padding:14px;
 margin-bottom:20px;
 }
 
+/* GRID */
+
 .grid{
 display:grid;
 gap:16px;
+grid-template-columns:1fr;
 }
 
 @media (min-width:640px){
-.grid{grid-template-columns:repeat(2,1fr);}
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
 }
 
 @media (min-width:1024px){
-.grid{grid-template-columns:repeat(3,1fr);}
+.grid{
+grid-template-columns:repeat(3,1fr);
 }
+}
+
+/* CARD */
 
 .card{
 background:var(--card);
@@ -193,74 +206,121 @@ display:block;
 
 <section class="intro">
 <h2>6 منتجات لازم تشوفها اليوم</h2>
-<p>عروض محدودة وأسعار منافسة — اضغط على أي منتج لاكتشاف السعر.</p>
+<p>عروض محدودة وأسعار منافسة — اضغط على المنتج لمعرفة السعر.</p>
 </section>
 
 <main class="grid">
+
+<!-- المنتج 1 -->
 
 <article class="card">
 <div class="media">
 <img src="img6.png" alt="">
 </div>
+
 <div class="content">
 <h3 class="title">هل يستحق هذا الشريط الضوئي كل الاهتمام؟</h3>
-<p class="desc">شريط إضاءة للكمبيوتر يريح العينين ويضيف جو رائع للمكتب.</p>
-<a class="btn" href="https://amzn.to/4ukMhWP" target="_blank">اكتشف السعر</a>
+<p class="desc">شريط إضاءة للشاشة يريح العين ويضيف جو احترافي للمكتب.</p>
+
+<a class="btn" href="https://amzn.to/4ukMhWP" target="_blank">
+اكتشف السعر في أمازون 🚀
+</a>
+
 </div>
 </article>
+
+
+<!-- المنتج 2 -->
 
 <article class="card">
 <div class="media">
 <img src="img3.png" alt="">
 </div>
+
 <div class="content">
 <h3 class="title">هل سطح الماوس هذا يستحق مكانه؟</h3>
-<p class="desc">قاعدة ماوس واسعة تعطي تحكم ممتاز أثناء اللعب والعمل.</p>
-<a class="btn" href="https://amzn.to/4rm0hNp" target="_blank">اكتشف السعر</a>
+<p class="desc">قاعدة ماوس كبيرة تعطي تحكم ممتاز أثناء اللعب والعمل.</p>
+
+<a class="btn" href="https://amzn.to/4rm0hNp" target="_blank">
+اكتشف السعر في أمازون 🚀
+</a>
+
 </div>
 </article>
+
+
+<!-- المنتج 3 -->
 
 <article class="card">
 <div class="media">
 <img src="img5.png" alt="">
 </div>
+
 <div class="content">
-<h3 class="title">كيبورد ميكانيكية للاعبين</h3>
-<p class="desc">استجابة سريعة وتصميم قوي للألعاب والعمل.</p>
-<a class="btn" href="https://amzn.to/46NZgpY" target="_blank">اكتشف السعر</a>
+<h3 class="title">كيبورد ميكانيكية للألعاب</h3>
+<p class="desc">استجابة سريعة وتصميم احترافي لعشاق الألعاب.</p>
+
+<a class="btn" href="https://amzn.to/46NZgpY" target="_blank">
+اكتشف السعر في أمازون 🚀
+</a>
+
 </div>
 </article>
+
+
+<!-- المنتج 4 -->
 
 <article class="card">
 <div class="media">
 <img src="img8.jpg" alt="">
 </div>
+
 <div class="content">
 <h3 class="title">حقيبة نسائية أنيقة</h3>
-<p class="desc">تصميم راقٍ ومساحة مناسبة للاستخدام اليومي.</p>
-<a class="btn" href="https://amzn.to/3OZEEVF" target="_blank">اكتشف السعر</a>
+<p class="desc">تصميم راقٍ ومناسب للاستخدام اليومي والمناسبات.</p>
+
+<a class="btn" href="https://amzn.to/3OZEEVF" target="_blank">
+اكتشف السعر في أمازون 🚀
+</a>
+
 </div>
 </article>
+
+
+<!-- المنتج 5 -->
 
 <article class="card">
 <div class="media">
 <img src="img9.jpg" alt="">
 </div>
+
 <div class="content">
 <h3 class="title">قلادة مويسانيت فاخرة</h3>
-<p class="desc">ماس مزروع في المختبر ومطلي بالذهب الوردي.</p>
-<a class="btn" href="https://amzn.to/47ysA3Y" target="_blank">اكتشف السعر</a>
+<p class="desc">ماس مزروع في المختبر مع طلاء ذهب وردي فاخر.</p>
+
+<a class="btn" href="https://amzn.to/47ysA3Y" target="_blank">
+اكتشف السعر في أمازون 🚀
+</a>
+
 </div>
 </article>
+
+
+<!-- المنتج 6 -->
 
 <article class="card">
 <div class="media">
 <img src="img10.jpg" alt="">
 </div>
+
 <div class="content">
 <h3 class="title">سوار لؤلؤ أنيق</h3>
-<p class="desc">لؤلؤ طبيعي مع تصميم قابل للتعديل.</p>
-<a class="btn" href="https://amzn.to/4s08Hez" target="_blank">اكتشف السعر</a>
+<p class="desc">سوار لؤلؤ طبيعي قابل للتعديل لمظهر فاخر.</p>
+
+<a class="btn" href="https://amzn.to/4s08Hez" target="_blank">
+اكتشف السعر في أمازون 🚀
+</a>
+
 </div>
 </article>
 
